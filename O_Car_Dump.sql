@@ -28,7 +28,7 @@ CREATE TABLE `car` (
   `car_id` int NOT NULL AUTO_INCREMENT,
   `category_id` int NOT NULL,
   `seller_id` char(20) NOT NULL,
-  `car_name` varchar(20) DEFAULT NULL,
+  `car_title` varchar(20) DEFAULT NULL,
   `car_price` int DEFAULT NULL,
   `car_year` int DEFAULT NULL,
   `car_mileage` int DEFAULT NULL,
@@ -201,12 +201,11 @@ CREATE TABLE `user` (
   `user_id` char(20) NOT NULL,
   `user_name` varchar(10) NOT NULL,
   `user_pw` varchar(50) NOT NULL,
-  `user_nickname` varchar(30) NOT NULL,
   `user_phone` varchar(15) DEFAULT NULL,
   `user_email` varchar(50) DEFAULT NULL,
   `user_address` varchar(50) DEFAULT NULL,
-  `created_date` datetime NOT NULL,
-  `user_role` int NOT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `user_role` int DEFAULT NULL,
   `Company_id` int DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   KEY `fk_User_UserCompany1_idx` (`Company_id`),
@@ -220,7 +219,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('asd','asdf','1234','asdfg','01012345678','qwe123@naver.com','서울특별시 노원구 광운로 20','2022-05-04 00:00:00',1,NULL),('qwe','qwer','1234','qwert','01012345678','qwe123@naver.com','서울특별시 노원구 광운로 20','2022-05-03 00:00:00',0,NULL),('wer','wert','1234','werty','01012345678','wer@naver.com','서울특별시 노원구 광운로 20','2022-05-05 00:00:00',2,1),('zxc','zxcv','1234','zxcvb','01012345678','qwe123@naver.com','서울특별시 노원구 광운로 20','2022-05-05 00:00:00',1,NULL);
+INSERT INTO `user` VALUES ('asd','asdf','1234','01012345678','qwe123@naver.com','서울특별시 노원구 광운로 20','2022-05-04 00:00:00',1,NULL),('qwe','qwer','1234','01012345678','qwe123@naver.com','서울특별시 노원구 광운로 20','2022-05-03 00:00:00',0,NULL),('wer','wert','1234','01012345678','wer@naver.com','서울특별시 노원구 광운로 20','2022-05-05 00:00:00',2,1),('zxc','zxcv','1234','01012345678','qwe123@naver.com','서울특별시 노원구 광운로 20','2022-05-05 00:00:00',1,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -241,4 +240,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-07  4:17:54
+-- Dump completed on 2022-06-07 22:17:48

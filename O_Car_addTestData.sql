@@ -5,19 +5,19 @@ INSERT INTO `o_car`.`category` (`categ_name`, `categ_company`) VALUES ('그랜�
 INSERT INTO `o_car`.`category` (`categ_name`, `categ_company`) VALUES ('팰리세이드', '현대');
 
 -- add user
-INSERT INTO `o_car`.`user` (`user_id`, `user_name`, `user_pw`, `user_nickname`, `user_phone`, `user_email`, `user_address`, `created_date`, `user_role`) 
-	VALUES ('qwe', 'qwer', '1234', 'qwert', '01012345678', 'qwe123@naver.com', '서울특별시 노원구 광운로 20', '2022-05-03', '0');
-INSERT INTO `o_car`.`user` (`user_id`, `user_name`, `user_pw`, `user_nickname`, `user_phone`, `user_email`, `user_address`, `created_date`, `user_role`) 
-	VALUES ('asd', 'asdf', '1234', 'asdfg', '01012345678', 'asd@naver.com', '서울특별시 노원구 광운로 20', '2022-05-04', '1');
-INSERT INTO `o_car`.`user` (`user_id`, `user_name`, `user_pw`, `user_nickname`, `user_phone`, `user_email`, `user_address`, `created_date`, `user_role`) 
-	VALUES ('zxc', 'zxcv', '1234', 'zxcvb', '01012345678', 'zxc@naver.com', '서울특별시 노원구 광운로 20', '2022-05-05', '1');
-INSERT INTO `o_car`.`user` (`user_id`, `user_name`, `user_pw`, `user_nickname`, `user_phone`, `user_email`, `user_address`, `created_date`, `user_role`) 
-	VALUES ('wer', 'wert', '1234', 'werty', '01012345678', 'wer@naver.com', '서울특별시 노원구 광운로 20', '2022-05-05', '2');
+INSERT INTO `o_car`.`user` (`user_id`, `user_name`, `user_pw`, `user_phone`, `user_email`, `user_address`, `created_date`, `user_role`) 
+	VALUES ('qwe', 'qwer', '1234', '01012345678', 'qwe123@naver.com', '서울특별시 노원구 광운로 20', '2022-05-03', '0');
+INSERT INTO `o_car`.`user` (`user_id`, `user_name`, `user_pw`, `user_phone`, `user_email`, `user_address`, `created_date`, `user_role`) 
+	VALUES ('asd', 'asdf', '1234', '01012345678', 'asd@naver.com', '서울특별시 노원구 광운로 20', '2022-05-04', '1');
+INSERT INTO `o_car`.`user` (`user_id`, `user_name`, `user_pw`, `user_phone`, `user_email`, `user_address`, `created_date`, `user_role`) 
+	VALUES ('zxc', 'zxcv', '1234', '01012345678', 'zxc@naver.com', '서울특별시 노원구 광운로 20', '2022-05-05', '1');
+INSERT INTO `o_car`.`user` (`user_id`, `user_name`, `user_pw`, `user_phone`, `user_email`, `user_address`, `created_date`, `user_role`) 
+	VALUES ('wer', 'wert', '1234', '01012345678', 'wer@naver.com', '서울특별시 노원구 광운로 20', '2022-05-05', '2');
 
 -- add car
-INSERT INTO `o_car`.`car` (`category_id`, `seller_id`, `car_name`, `car_price`, `car_year`, `car_mileage`, `car_fuel`, `car_info`, `created_date`, `hit`) 
+INSERT INTO `o_car`.`car` (`category_id`, `seller_id`, `car_title`, `car_price`, `car_year`, `car_mileage`, `car_fuel`, `car_info`, `created_date`, `hit`) 
 	VALUES ('2', 'asd', '그랜저', '2000', '2015', '10', '가솔린', '비고1', '2022-05-06', '0');
-INSERT INTO `o_car`.`car` (`category_id`, `seller_id`, `car_name`, `car_price`, `car_year`, `car_mileage`, `car_fuel`, `car_info`, `created_date`, `hit`) 
+INSERT INTO `o_car`.`car` (`category_id`, `seller_id`, `car_title`, `car_price`, `car_year`, `car_mileage`, `car_fuel`, `car_info`, `created_date`, `hit`) 
 	VALUES ('3', 'zxc', '팰리세이드', '1500', '2020', '11', '디젤', '비고2', '2022-05-07', '0');
 
 -- add favorite
