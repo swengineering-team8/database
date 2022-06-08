@@ -161,6 +161,32 @@ LOCK TABLES `image` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `noticetb`
+--
+
+DROP TABLE IF EXISTS `noticetb`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `noticetb` (
+  `notice_id` int NOT NULL AUTO_INCREMENT,
+  `notice_title` varchar(45) DEFAULT NULL,
+  `notice_content` longtext,
+  `notice_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`notice_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `noticetb`
+--
+
+LOCK TABLES `noticetb` WRITE;
+/*!40000 ALTER TABLE `noticetb` DISABLE KEYS */;
+INSERT INTO `noticetb` VALUES (1,'title1','test1','2022-06-08 00:00:00'),(2,'title2','test2','2022-06-09 00:00:00');
+/*!40000 ALTER TABLE `noticetb` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `order`
 --
 
@@ -240,4 +266,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-07 22:17:48
+-- Dump completed on 2022-06-08 16:24:39
