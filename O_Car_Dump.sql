@@ -26,22 +26,22 @@ DROP TABLE IF EXISTS `car`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `car` (
   `car_id` int NOT NULL AUTO_INCREMENT,
-  `category_id` int NOT NULL,
   `seller_id` char(20) NOT NULL,
-  `car_title` varchar(20) DEFAULT NULL,
+  `car_title` varchar(40) DEFAULT NULL,
+  `car_name` varchar(30) DEFAULT NULL,
   `car_price` int DEFAULT NULL,
   `car_year` int DEFAULT NULL,
+  `car_number` varchar(15) DEFAULT NULL,
   `car_mileage` int DEFAULT NULL,
   `car_fuel` varchar(10) DEFAULT NULL,
   `car_info` longtext,
+  `car_image` varchar(200) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
   `hit` int DEFAULT NULL,
   PRIMARY KEY (`car_id`),
-  KEY `fk_Car_category1_idx` (`category_id`),
   KEY `fk_Car_User1_idx` (`seller_id`),
-  CONSTRAINT `fk_Car_category1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`),
   CONSTRAINT `fk_Car_User1` FOREIGN KEY (`seller_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,33 +50,8 @@ CREATE TABLE `car` (
 
 LOCK TABLES `car` WRITE;
 /*!40000 ALTER TABLE `car` DISABLE KEYS */;
-INSERT INTO `car` VALUES (1,2,'asd','그랜저',2000,2015,10,'가솔린','비고1','2022-05-06 00:00:00',0),(2,3,'zxc','팰리세이드',1500,2020,11,'디젤','비고2','2022-05-07 00:00:00',0);
+INSERT INTO `car` VALUES (3,'rty','제목1','그랜저',1500,2016,'00바0000',10,'가솔린','비고1',NULL,'2022-06-08 00:00:01',0),(4,'fgh','제목2','팰리세이드',2000,2020,'00바0000',12,'디젤','비고2',NULL,'2022-06-08 00:00:02',0);
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `category`
---
-
-DROP TABLE IF EXISTS `category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `category` (
-  `category_id` int NOT NULL AUTO_INCREMENT,
-  `categ_name` varchar(10) DEFAULT NULL,
-  `categ_company` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `category`
---
-
-LOCK TABLES `category` WRITE;
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'쏘나타','현대'),(2,'그랜저','현대'),(3,'팰리세이드','현대');
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -100,7 +75,6 @@ CREATE TABLE `company` (
 
 LOCK TABLES `company` WRITE;
 /*!40000 ALTER TABLE `company` DISABLE KEYS */;
-INSERT INTO `company` VALUES (1,'주)회사1','비고1');
 /*!40000 ALTER TABLE `company` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,7 +103,6 @@ CREATE TABLE `favorite` (
 
 LOCK TABLES `favorite` WRITE;
 /*!40000 ALTER TABLE `favorite` DISABLE KEYS */;
-INSERT INTO `favorite` VALUES (1,'qwe',2);
 /*!40000 ALTER TABLE `favorite` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,12 +115,9 @@ DROP TABLE IF EXISTS `image`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `image` (
   `img_id` int NOT NULL AUTO_INCREMENT,
-  `car_id` int NOT NULL,
   `img_name` varchar(45) NOT NULL,
-  `img_path` varchar(100) NOT NULL,
-  PRIMARY KEY (`img_id`),
-  KEY `fk_Image_Car1_idx` (`car_id`),
-  CONSTRAINT `fk_Image_Car1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`)
+  `img_path` varchar(200) NOT NULL,
+  PRIMARY KEY (`img_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -182,7 +152,6 @@ CREATE TABLE `noticetb` (
 
 LOCK TABLES `noticetb` WRITE;
 /*!40000 ALTER TABLE `noticetb` DISABLE KEYS */;
-INSERT INTO `noticetb` VALUES (1,'title1','test1','2022-06-08 00:00:00'),(2,'title2','test2','2022-06-09 00:00:00');
 /*!40000 ALTER TABLE `noticetb` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,7 +181,6 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` VALUES (1,2,'qwe','2022-05-14 00:00:00');
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,7 +213,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('asd','asdf','1234','01012345678','qwe123@naver.com','서울특별시 노원구 광운로 20','2022-05-04 00:00:00',1,NULL),('qwe','qwer','1234','01012345678','qwe123@naver.com','서울특별시 노원구 광운로 20','2022-05-03 00:00:00',0,NULL),('wer','wert','1234','01012345678','wer@naver.com','서울특별시 노원구 광운로 20','2022-05-05 00:00:00',2,1),('zxc','zxcv','1234','01012345678','qwe123@naver.com','서울특별시 노원구 광운로 20','2022-05-05 00:00:00',1,NULL);
+INSERT INTO `user` VALUES ('abc','abcd','1234','01012345678','qwe123@naver.com','서울특별시 노원구','2022-06-08 00:01:02',0,NULL),('fgh','fghj','1234','01012345678','qwe123@naver.com','서울특별시 노원구','2022-06-08 00:01:05',1,NULL),('qwe','qwer','1234','01012345678','qwe123@naver.com','서울특별시 노원구','2022-06-08 00:01:01',0,NULL),('rty','rtyu','1234','01012345678','qwe123@naver.com','서울특별시 노원구','2022-06-08 00:01:04',1,NULL),('zxc','zxcv','1234','01012345678','qwe123@naver.com','서울특별시 노원구','2022-06-08 00:01:03',0,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -266,4 +234,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-08 16:24:39
+-- Dump completed on 2022-06-08 22:17:48
