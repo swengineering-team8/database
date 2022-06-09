@@ -27,15 +27,15 @@ DROP TABLE IF EXISTS `car`;
 CREATE TABLE `car` (
   `car_id` int NOT NULL AUTO_INCREMENT,
   `seller_id` char(20) NOT NULL,
+  `car_number` varchar(15) DEFAULT NULL,
   `car_title` varchar(40) DEFAULT NULL,
   `car_name` varchar(30) DEFAULT NULL,
   `car_price` int DEFAULT NULL,
   `car_year` int DEFAULT NULL,
-  `car_number` varchar(15) DEFAULT NULL,
   `car_mileage` int DEFAULT NULL,
   `car_fuel` varchar(10) DEFAULT NULL,
   `car_info` longtext,
-  `car_image` varchar(200) DEFAULT NULL,
+  `image` varchar(200) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
   `hit` int DEFAULT NULL,
   PRIMARY KEY (`car_id`),
@@ -50,7 +50,7 @@ CREATE TABLE `car` (
 
 LOCK TABLES `car` WRITE;
 /*!40000 ALTER TABLE `car` DISABLE KEYS */;
-INSERT INTO `car` VALUES (3,'rty','제목1','그랜저',1500,2016,'00바0000',10,'가솔린','비고1',NULL,'2022-06-08 00:00:01',0),(4,'fgh','제목2','팰리세이드',2000,2020,'00바0000',12,'디젤','비고2',NULL,'2022-06-08 00:00:02',0);
+INSERT INTO `car` VALUES (3,'rty','00바0000','제목1','그랜저',1500,2016,10,'가솔린','비고1',NULL,'2022-06-08 00:00:01',0),(4,'fgh','00바0000','제목2','팰리세이드',2000,2020,12,'디젤','비고2',NULL,'2022-06-08 00:00:02',0);
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -234,4 +234,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-08 22:17:48
+-- Dump completed on 2022-06-09 15:41:59
