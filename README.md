@@ -2,5 +2,5 @@
 
 O_Car 데이터베이스 MySQL
 
-![image](https://user-images.githubusercontent.com/97014341/172626734-0e41d22b-955e-4f3c-89f3-37a17ed543cd.png)
+![image](https://user-images.githubusercontent.com/97014341/172782405-61d5f5ea-6fb9-45eb-8d63-f2c9e01a571f.png)
 
