@@ -50,7 +50,6 @@ CREATE TABLE `car` (
 
 LOCK TABLES `car` WRITE;
 /*!40000 ALTER TABLE `car` DISABLE KEYS */;
-INSERT INTO `car` VALUES (3,'rty','00바0000','제목1','그랜저',1500,2016,10,'가솔린','비고1',NULL,'2022-06-08 00:00:01',0),(4,'fgh','00바0000','제목2','팰리세이드',2000,2020,12,'디젤','비고2',NULL,'2022-06-08 00:00:02',0);
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -213,7 +212,6 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('abc','abcd','1234','01012345678','qwe123@naver.com','서울특별시 노원구','2022-06-08 00:01:02',0,NULL),('fgh','fghj','1234','01012345678','qwe123@naver.com','서울특별시 노원구','2022-06-08 00:01:05',1,NULL),('qwe','qwer','1234','01012345678','qwe123@naver.com','서울특별시 노원구','2022-06-08 00:01:01',0,NULL),('rty','rtyu','1234','01012345678','qwe123@naver.com','서울특별시 노원구','2022-06-08 00:01:04',1,NULL),('zxc','zxcv','1234','01012345678','qwe123@naver.com','서울특별시 노원구','2022-06-08 00:01:03',0,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -234,4 +232,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-09 15:41:59
+-- Dump completed on 2022-06-09 22:07:58
