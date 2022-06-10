@@ -54,6 +54,35 @@ LOCK TABLES `car` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `comment`
+--
+
+DROP TABLE IF EXISTS `comment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `comment` (
+  `comment_id` int NOT NULL,
+  `user_user_id` char(20) NOT NULL,
+  `car_car_id` int NOT NULL,
+  `comment_content` longtext,
+  PRIMARY KEY (`comment_id`),
+  KEY `fk_comment_user_idx` (`user_user_id`),
+  KEY `fk_comment_car1_idx` (`car_car_id`),
+  CONSTRAINT `fk_comment_car1` FOREIGN KEY (`car_car_id`) REFERENCES `car` (`car_id`),
+  CONSTRAINT `fk_comment_user` FOREIGN KEY (`user_user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comment`
+--
+
+LOCK TABLES `comment` WRITE;
+/*!40000 ALTER TABLE `comment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `company`
 --
 
@@ -232,4 +261,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-09 22:07:58
+-- Dump completed on 2022-06-10 22:59:01
