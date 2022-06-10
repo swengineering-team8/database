@@ -41,7 +41,7 @@ CREATE TABLE `car` (
   PRIMARY KEY (`car_id`),
   KEY `fk_Car_User1_idx` (`seller_id`),
   CONSTRAINT `fk_Car_User1` FOREIGN KEY (`seller_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -50,18 +50,19 @@ CREATE TABLE `car` (
 
 LOCK TABLES `car` WRITE;
 /*!40000 ALTER TABLE `car` DISABLE KEYS */;
+INSERT INTO `car` VALUES (5,'id1','123가4567','Sonata',NULL,1200,2020,50,'가솔린','비고1','/images/ubt-1654870026990.png','2022-06-10 23:07:06',NULL);
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `comment`
+-- Table structure for table `commenttb`
 --
 
-DROP TABLE IF EXISTS `comment`;
+DROP TABLE IF EXISTS `commenttb`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `comment` (
-  `comment_id` int NOT NULL,
+CREATE TABLE `commenttb` (
+  `comment_id` int NOT NULL AUTO_INCREMENT,
   `user_id` char(20) NOT NULL,
   `car_id` int NOT NULL,
   `comment_content` longtext,
@@ -70,16 +71,17 @@ CREATE TABLE `comment` (
   KEY `fk_comment_car1_idx` (`car_id`),
   CONSTRAINT `fk_comment_car1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`),
   CONSTRAINT `fk_comment_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `comment`
+-- Dumping data for table `commenttb`
 --
 
-LOCK TABLES `comment` WRITE;
-/*!40000 ALTER TABLE `comment` DISABLE KEYS */;
-/*!40000 ALTER TABLE `comment` ENABLE KEYS */;
+LOCK TABLES `commenttb` WRITE;
+/*!40000 ALTER TABLE `commenttb` DISABLE KEYS */;
+INSERT INTO `commenttb` VALUES (1,'id1',5,'123');
+/*!40000 ALTER TABLE `commenttb` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -241,6 +243,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES ('id1','name1','1234','123','123@123','123','2022-06-10 23:06:39',NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -261,4 +264,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-10 23:02:04
+-- Dump completed on 2022-06-11  0:36:08
