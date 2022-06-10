@@ -62,14 +62,14 @@ DROP TABLE IF EXISTS `comment`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `comment` (
   `comment_id` int NOT NULL,
-  `user_user_id` char(20) NOT NULL,
-  `car_car_id` int NOT NULL,
+  `user_id` char(20) NOT NULL,
+  `car_id` int NOT NULL,
   `comment_content` longtext,
   PRIMARY KEY (`comment_id`),
-  KEY `fk_comment_user_idx` (`user_user_id`),
-  KEY `fk_comment_car1_idx` (`car_car_id`),
-  CONSTRAINT `fk_comment_car1` FOREIGN KEY (`car_car_id`) REFERENCES `car` (`car_id`),
-  CONSTRAINT `fk_comment_user` FOREIGN KEY (`user_user_id`) REFERENCES `user` (`user_id`)
+  KEY `fk_comment_user_idx` (`user_id`),
+  KEY `fk_comment_car1_idx` (`car_id`),
+  CONSTRAINT `fk_comment_car1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`),
+  CONSTRAINT `fk_comment_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -261,4 +261,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-10 22:59:01
+-- Dump completed on 2022-06-10 23:02:04
