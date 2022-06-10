@@ -50,38 +50,35 @@ CREATE TABLE `car` (
 
 LOCK TABLES `car` WRITE;
 /*!40000 ALTER TABLE `car` DISABLE KEYS */;
-INSERT INTO `car` VALUES (5,'id1','123가4567','Sonata',NULL,1200,2020,50,'가솔린','비고1','/images/ubt-1654870026990.png','2022-06-10 23:07:06',NULL);
 /*!40000 ALTER TABLE `car` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `commenttb`
+-- Table structure for table `comments`
 --
 
-DROP TABLE IF EXISTS `commenttb`;
+DROP TABLE IF EXISTS `comments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `commenttb` (
-  `comment_id` int NOT NULL AUTO_INCREMENT,
-  `user_id` char(20) NOT NULL,
+CREATE TABLE `comments` (
+  `cmt_id` int NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(10) NOT NULL,
   `car_id` int NOT NULL,
-  `comment_content` longtext,
-  PRIMARY KEY (`comment_id`),
-  KEY `fk_comment_user_idx` (`user_id`),
+  `cmt_content` longtext,
+  `cmt_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`cmt_id`),
   KEY `fk_comment_car1_idx` (`car_id`),
-  CONSTRAINT `fk_comment_car1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`),
-  CONSTRAINT `fk_comment_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+  CONSTRAINT `fk_comment_car1` FOREIGN KEY (`car_id`) REFERENCES `car` (`car_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `commenttb`
+-- Dumping data for table `comments`
 --
 
-LOCK TABLES `commenttb` WRITE;
-/*!40000 ALTER TABLE `commenttb` DISABLE KEYS */;
-INSERT INTO `commenttb` VALUES (1,'id1',5,'123');
-/*!40000 ALTER TABLE `commenttb` ENABLE KEYS */;
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -215,6 +212,32 @@ LOCK TABLES `order` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `questions`
+--
+
+DROP TABLE IF EXISTS `questions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `questions` (
+  `qst_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` char(20) DEFAULT NULL,
+  `qst_title` varchar(45) DEFAULT NULL,
+  `qst_content` longtext,
+  `qst_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`qst_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `questions`
+--
+
+LOCK TABLES `questions` WRITE;
+/*!40000 ALTER TABLE `questions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `questions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user`
 --
 
@@ -243,7 +266,6 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('id1','name1','1234','123','123@123','123','2022-06-10 23:06:39',NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -264,4 +286,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-11  0:36:08
+-- Dump completed on 2022-06-11  8:15:05
